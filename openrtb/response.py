@@ -53,6 +53,7 @@ class SeatBid(Object):
     bid = Field(Array(Bid), required=True)
     seat = Field(String)
     group = Field(int)
+    ext = Field(Object)
 
 
 class BidResponse(Object):
