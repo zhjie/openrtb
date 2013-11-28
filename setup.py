@@ -8,7 +8,7 @@ def readme(fn):
 
 
 setup(name='openrtb',
-      version='0.0.6',
+      version='0.0.6.1',
       packages=[
           'openrtb',
       ],
@@ -21,8 +21,8 @@ setup(name='openrtb',
           'License :: OSI Approved :: BSD License',
           'Topic :: Software Development :: Libraries',
       ],
-      url='https://github.com/anossov/openrtb',
+      url='https://github.com/zhjie/openrtb',
       license='BSD',
-      description='A set of classes implementing OpenRTB 2.0 and OpenRTB Mobile specifications',
+      description='A set of classes implementing OpenRTB 2.1 and OpenRTB Mobile specifications',
       long_description=readme('README.rst'),
 )
