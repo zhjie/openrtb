@@ -22,7 +22,7 @@ class Publisher(Object):
     name = Field(String)
     cat = Field(Array(String))
     domain = Field(String)
-    ext = Field(Object)
+    ext = Field(String)
 
 
 class Producer(Object):
@@ -39,7 +39,7 @@ class Producer(Object):
     name = Field(String)
     cat = Field(Array(String))
     domain = Field(String)
-    ext = Field(Object)
+    ext = Field(String)
 
 
 class Geo(Object):
@@ -63,7 +63,7 @@ class Geo(Object):
     city = Field(String)
     zip = Field(String)
     type = Field(constants.LocationType)
-    ext = Field(Object)
+    ext = Field(String)
 
     def loc(self):
         if self.lat and self.lon:
@@ -82,7 +82,7 @@ class Segment(Object):
     id = Field(String)
     name = Field(String)
     value = Field(String)
-    ext = Field(Object)
+    ext = Field(String)
 
 
 class Data(Object):
@@ -99,7 +99,7 @@ class Data(Object):
     id = Field(String)
     name = Field(String)
     segment = Field(Array(Segment))
-    ext = Field(Object)
+    ext = Field(String)
 
 
 class User(Object):
@@ -122,7 +122,7 @@ class User(Object):
     customdata = Field(String)
     geo = Field(Geo)
     data = Field(Array(Data))
-    ext = Field(Object)
+    ext = Field(String)
 
 
 class Device(Object):
@@ -156,7 +156,7 @@ class Device(Object):
     connectiontype = Field(constants.ConnectionType)
     devicetype = Field(constants.DeviceType)
     flashver = Field(String)
-    ext = Field(Object)
+    ext = Field(String)
 
     def get_geo(self):
         return self.geo or Geo()
@@ -197,8 +197,7 @@ class Content(Object):
     qagmediarating = Field(int)
     embeddable = Field(int)
     language = Field(String)
-    ext = Field(Object)
-
+    ext = Field(String)
 
 
 class Site(Object):
@@ -224,8 +223,7 @@ class Site(Object):
     publisher = Field(Publisher)
     content = Field(Content)
     keywords = Field(String)
-    ext = Field(Object)
-
+    ext = Field(String)
 
 
 class App(Object):
@@ -253,7 +251,7 @@ class App(Object):
     content = Field(Content)
     keywords = Field(String)
     storeurl = Field(String)
-    ext = Field(Object)
+    ext = Field(String)
 
 
 class Banner(Object):
@@ -279,7 +277,7 @@ class Banner(Object):
     topframe = Field(int)
     expdir = Field(Array(constants.ExpandableDirection))
     api = Field(Array(constants.APIFramework))
-    ext = Field(Object)
+    ext = Field(String)
 
     def blocked_types(self):
         return set(self.btype or [])
@@ -320,8 +318,7 @@ class Video(Object):
     companionad = Field(Array(Banner))
     api = Field(Array(constants.APIFramework))
     companiontype = Field(Array(int))
-    ext = Field(Object)
-
+    ext = Field(String)
 
 
 class Impression(Object):
@@ -343,7 +340,7 @@ class Impression(Object):
     bidfloor = Field(Decimal)
     bidfloorcur = Field(String, default='USD')
     iframebuster = Field(Array(String))
-    ext = Field(Object)
+    ext = Field(String)
 
 
 class BidRequest(Object):
@@ -367,7 +364,7 @@ class BidRequest(Object):
     cur = Field(Array(String))
     bcat = Field(Array(String))
     badv = Field(Array(String))
-    ext = Field(Object)
+    ext = Field(String)
 
     def get_app(self):
         return self.app or App()

@@ -35,7 +35,7 @@ class Bid(Object):
     cid = Field(String)
     crid = Field(String)
     attr = Field(Array(constants.CreativeAttribute))
-    ext = Field(Object)
+    ext = Field(String)
 
 
 class SeatBid(Object):
@@ -53,7 +53,7 @@ class SeatBid(Object):
     bid = Field(Array(Bid), required=True)
     seat = Field(String)
     group = Field(int)
-    ext = Field(Object)
+    ext = Field(String)
 
 
 class BidResponse(Object):
@@ -71,7 +71,7 @@ class BidResponse(Object):
     bidid = Field(String)
     cur = Field(String)
     customdata = Field(String)
-    ext = Field(Object)
+    ext = Field(String)
 
     @staticmethod
     def minimal(id, bid_id, bid_impid, bid_price):
